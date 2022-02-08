@@ -23,6 +23,7 @@
 % Commands for inserting attention-grabbing comments into the text.
 \newcommand{\rachel}[1]{{\color{magenta}RM: #1}}
 \newcommand{\mike}[1]{{\color{cyan}MJ: #1}}
+\newcommand{\arun}[1]{{\color{blue}AK: #1}}
 
 \shorttitle{PSFs of coadded images}
 
@@ -36,6 +37,8 @@
 \author[0000-0003-1666-0962]{Robert H. Lupton}
 \affiliation{Princeton University, Princeton, NJ, USA}
 \author[0000-0003-2759-5764]{James Bosch}
+\affiliation{Princeton University, Princeton, NJ, USA}
+\author[0000-0001-8783-6529]{Arun Kannawadi}
 \affiliation{Princeton University, Princeton, NJ, USA}
 
 \date{\today}
@@ -55,7 +58,7 @@
 
 For many purposes, we currently use and will in future use coadded images to measure the properties of stars and galaxies observed in astronomical images.  The subject of this Note is the effective PSF of the coadded images, and in particular, {\em what is the impact of the algorithm used for coaddition on the effective PSF of the coadd?} Under what circumstances does the coadd have a well-defined PSF, and how is that PSF defined?  The answer to this question depends on (a) whether the coaddition scheme is linear or not (e.g., mean versus median), and (b) what weights are used for a linear coaddition scheme (e.g., including the object signal in an inverse variance weight). In particular, we will show that use of a nonlinear coaddition scheme and/or use of weights that include the signals of individual objects when carrying out a linear coaddition scheme results in a coadd that does not have a well-defined PSF.
 
-For this purpose, we will ignore other relevant issues that occur in practice, such as the need to obtain an accurate astrometric solution in each exposure before producing the coadd, issues that can arise when carrying out the image registration and resampling through interpolation, elimination of artifacts in individual exposures, magnitude-dependent detector effects that can modify the apparent PSF measured from stars, etc.  In other words, this writeup will assume that (a) the individual images are perfectly aligned with each other, (b) the PSF and its spatial variation are perfectly known in each individual exposure contributing to the coadd, (c) all detector non-idealities have been perfectly corrected, and (d) the coadd is produced at the native pixel scale. 
+For this purpose, we will ignore other relevant issues that occur in practice, such as the need to obtain an accurate astrometric solution in each exposure before producing the coadd, issues that can arise when carrying out the image registration and resampling through interpolation\footnote{This problem is particularly non-trivial for undersampled images.}, elimination of artifacts in individual exposures, magnitude-dependent detector effects that can modify the apparent PSF measured from stars, etc.  In other words, this writeup will assume that (a) the individual images are perfectly aligned with each other, (b) the PSF and its spatial variation are perfectly known in each individual exposure contributing to the coadd, (c) all detector non-idealities have been perfectly corrected, and (d) the coadd is produced at the native pixel scale. 
 %Our formalism will, in addition, omit noise terms that are always present for real images. 
 However, we will not assume that the individual exposures have the same PSF, as variation in PSF between exposures is what makes this problem of producing a coadd with a meaningful and well-understood PSF challenging. 
 %Also, we will briefly touch on the issues that can arise when the coaddition algorithm is designed to eliminate artifacts by employing some nonlinear approach to coaddition, but will not delve into this issue extensively.
@@ -103,7 +106,7 @@ In this Note we aim to provide some of the mathematical justification and physic
 
 \section{Formalism}\label{sec:formalism}
 
-In this work we assume that multiple background-subtracted images $I_i(x,y)$ (with subscript $i$ indexing the individual images) are being combined to produce a coadded image $I_\text{coadd}(x,y)$.  We also presume that each image has the same true underlying sky scene\footnote{This means that technically, our results only apply to static sources.  Following the results of this Note, it seems that the effective PSF on the coadd for time-varying sources will differ depending on the light curve (e.g., in the limit that a variable source is very bright in just one exposure and faint in all the others, its PSF in the coadd will effectively be that of the exposure where it is very bright).  Exploring these issues for transient sources is beyond the scope of this Note.} $T(x,y)$ (hence it has no index $i$) but a potentially different effective PSF\footnote{We use the phrase `effective PSF' to refer to the convolution of the PSF from the atmosphere and telescope optics with the pixel response function.  The effective PSF is then sampled at the centers of pixels.  We prefer this convention over the alternative, not including the pixel response and then explicitly integrating over the pixel response function, as it makes the bookkeeping cleaner for coadded or resampled images. Also note there is some ambiguity in the notation we are using for the $(x,y)$ argument of the effective PSF.  Here we mean that the effective PSF may vary as a function of position -- so when evaluating $P_i(x,y)$ at some specific $(x,y)$ position, we get a representation of the PSF that is also an image of some dimensionality.  (This is in contrast to $T(x,y)$, which when evaluated at a specific $x$ and $y$ is just a number.)} $P_i(x,y)$.  By definition, it is the case that
+In this work we assume that multiple background-subtracted images $I_i(x,y)$ (with subscript $i$ indexing the individual images) are being combined to produce a coadded image $I_\text{coadd}(x,y)$.  Here the $(x,y)$ coordinates are not detector coordinates; they are meant to indicate some idealized sky coordinate system after correction for astrometric distortions on all scales. We also presume that each image has the same true underlying sky scene\footnote{This means that technically, our results only apply to static sources.  Following the results of this Note, it seems that the effective PSF on the coadd for time-varying sources will differ depending on the light curve (e.g., in the limit that a variable or transient source is very bright in just one exposure and faint in all the others, its PSF in the coadd will effectively be that of the exposure where it is very bright). If LSST is carried out with a `two snaps' approach then this is even relevant to how the two snaps are combined. Exploring these issues for time-varying sources is beyond the scope of this Note.} $T(x,y)$ (hence it has no index $i$) but a potentially different effective PSF\footnote{We use the phrase `effective PSF' to refer to the convolution of the PSF from the atmosphere and telescope optics with the pixel response function.  The effective PSF is then sampled at the centers of pixels.  We prefer this convention over the alternative, not including the pixel response and then explicitly integrating over the pixel response function, as it makes the bookkeeping cleaner for coadded or resampled images. Also note there is some ambiguity in the notation we are using for the $(x,y)$ argument of the effective PSF.  Here we mean that the effective PSF may vary as a function of position -- so when evaluating $P_i(x,y)$ at some specific $(x,y)$ position, we get a representation of the PSF that is also an image of some dimensionality.  (This is in contrast to $T(x,y)$, which when evaluated at a specific $x$ and $y$ is just a number.)} $P_i(x,y)$.  By definition, it is the case that
 \begin{equation}
 I_i(x,y) = T(x,y) \otimes P_i(x,y)    
 \end{equation}
@@ -118,7 +121,7 @@ or its Fourier-space equivalent
     \widetilde{I}_\text{coadd}(k_x,k_y) = \widetilde{T}(k_x,k_y) \widetilde{P}_\text{coadd}(k_x,k_y)?
 \end{equation}
 
-Each image is presumed to have a spatially-varying background level $B_i(x,y)$ that has been subtracted prior to PSF measurement and coaddition.  This background level can be used to define a spatially-varying weight function for coaddition.
+Each image is presumed to have a spatially-varying background level $B_i(x,y)$ that has been subtracted prior to PSF measurement and coaddition.  This background level can be used to define a spatially-varying weight function for coaddition.  Moreover, while not included explicitly as a separate term, each image is presumed to have noise.
 
 \section{Linear coaddition schemes}\label{sec:lin}
 
@@ -139,7 +142,7 @@ We begin with a direct illustration of the impact of weighting choices in a line
 \end{center}
  \end{figure}
  
-A natural choice for weighting is inverse variance weighting, to achieve an optimal signal-to-noise in the detection of objects in the coadd\footnote{Inverse variance weighting is formally optimal unless one adopts more general linear coadd estimators involving a matrix product, as in the Kaiser approach.}.  We therefore define a fully spatially varying optimal weight for each image:
+A natural choice for weighting is inverse variance weighting, to achieve an optimal signal-to-noise in the detection of objects in the coadd\footnote{Inverse variance weighting is {\em statistically} optimal unless one adopts more general linear coadd estimators involving a matrix product, as in the Kaiser approach.}.  We therefore define a fully spatially varying optimal weight for each image:
 %while ensuring the weights sum to 1 at each point:
 \begin{equation}\label{eq:optweight}
     w_{i,\text{opt}}(x,y) = \frac{1}{B_i(x,y)+I_i(x,y)}.
@@ -151,7 +154,7 @@ Combining Eqs.~\eqref{eq:lincoadd} and~\eqref{eq:optweight}, the coadded image w
 
 To illustrate the impact of weight functions, we presume we are viewing an image of a single star.  In this case, we can assume that the sky scene consists of a delta function at the center of our image ($T(x,y)=f_\text{star}\delta(x=0,y=0)$) and therefore $I_i(x,y)=f_\text{star}P_i(x,y)$ where $f_\text{star}$ is the total star flux.  We further assume that the PSFs and backgrounds in the images will in general differ from each other, but are spatially constant, i.e., $B_i(x,y)=B_i$.  For simplicity, we consider PSFs that are described as Gaussians with $\sigma=1$ and $\sigma=1.5$ (arbitrary units), and just two images with a background level of $B_1=B_2=10$.  We then ask the question of what does the coadd look like for different values of $f_\text{star}$?  The result is shown in Figure~\ref{fig:coadd_psf}.
 
-As shown, the resulting coadded image differs depending on whether the star flux is such that the images are background-dominated at all positions, or whether there are some positions near the center of the star that are signal-dominated.  This is a key result: in reality, there are objects of different fluxes throughout the images, and this figure suggests that once the images have different PSFs, the dependence of the weights on the flux means that objects will appear differently in the coadds depending on their brightness, even in the very simple case that we only have two images with the same constant background level and with a PSF that does not vary spatially within the images.  Once that is the case, there is no well-defined PSF for these images, as defined in Eq.~\eqref{eq:coaddpsf}.
+As shown, the resulting coadded image differs depending on whether the star flux is such that the images are background-dominated at all positions, or whether there are some positions near the center of the star that are signal-dominated.  This is a key result: in reality, there are objects of different fluxes throughout the images, and this figure suggests that once the images have different PSFs, the dependence of the weights on the flux means that objects will appear differently in the coadds depending on their brightness, even in the very simple case that we only have two images with the same constant background level and with a PSF that does not vary spatially within the images.  Once that is the case, there is no well-defined PSF for these images, as defined in Eq.~\eqref{eq:coaddpsf}.  Therefore, despite the statistical optimality of this weighting scheme, it is fundamentally flawed from the standpoint of systematics.
 
 Ultimately the origin of these issues is that the weights that define the coadd in Eq.~\eqref{eq:optcoadd} depend on the input signal in the objects in the sky scene.  It seems possible that weights that depend only on quantities that are unrelated to the sky scene (example: background level and average seeing size) will not induce the same problems, which is the origin of the choices made in \citet{2014ApJ...794..120A} and \citet{2017ApJ...836..187Z}.  By extension, a coadd with weights that depend on object signals will come closer to having a well-defined PSF in the limit that all objects are background-dominated.
 
@@ -194,7 +197,7 @@ However, for there to be a valid PSF, it needs to be the case that the true scen
     \end{equation}
 
     \item \textbf{Weights that are independent of the true scene or the PSF:}  If the weights are based solely on imaging characteristics (e.g., the background level, electronic read noise, etc.), and not anything correlated with the true scene or the PSF, then the weights $w_i(x,y)$ are uncorrelated with both $T(x,y)$ and $P_i(x,y)$.
-    In this case, we have $\langle (w_i(x,y)-\bar w_i) T(x,y) \rangle = 0$ and $\langle (w_i(x,y) - \bar w_i) P_i(x,y) \rangle = 0$.  
+    In this case, we have $\langle (w_i(x,y)-\bar w_i) T(x,y) \rangle = 0$ and $\langle (w_i(x,y) - \bar w_i) P_i(x,y) \rangle = 0$, where $\tilde{w_i} = \langle w_i(x,y)\rangle$, the spatial average of the weights.  
     
     Define $P_\text{coadd}$ to be the weighted average PSF:
     \begin{equation}\label{eq:varweightpsf}
@@ -260,7 +263,7 @@ However, as noted in Sec.~\ref{sec:intro}, \citet{2018PASJ...70S...5B} has point
 
 The above arguments about median and clipped-mean coadds seem to imply that they are only a
 problem at moderately low signal-to-noise.  At high signal-to-noise, the profiles of stars are nearly
-independent of the flux of the star for both median and clipped sigma coadds.  
+independent of the flux of the star for both median and clipped-mean coadds.  
 However, when considering extended sources (i.e. galaxies),
 there is an additional problem with these, or indeed any, nonlinear coaddition schemes,
 even when limiting to high signal-to-noise sources.
@@ -339,15 +342,15 @@ coaddition process (using the same three PSFs as shown in Figure~\ref{fig:median
 In this note, we showed a number of choices in coaddition algorithm that could result
 in the coadd image not having a well-defined PSF, by which we mean that there is no
 PSF function one can define for each location in the coadd such that the observed image is a convolution
-of the true scene with this PSF.
+of the true scene with this PSF.\arun{In general, for a PSF to be well-defined, the coaddition procedure must preserve linearity and translational-invariance. Non-linear coaddition algorithms violate the linearity condition, and per-pixel weighting violates the latter.}
 
-We note that this is not necessarily a problem.  There are many use cases for coadd images
+We note that not having a well-defined PSF is not necessarily a problem always.  There are many use cases for coadd images
 where one does not care whether the PSF is well-defined.  E.g. making color images
 for showing observations of a planetary nebula, or possibly detection coadds where one may just want to maximize total signal-to-noise.
 %\mike{??  I feel like at least some detection coadds might want a well-defined PSF, but maybe sometimes you don't really care?} \rachel{I think you are right, but since it says `possibly' and `may', I think it allows for the possibility that one may indeed want a well-defined PSF for a detection coadd in some cases.}
 But for almost any use case where one will
 be making some measurement (e.g., flux or shape) based on the pixel values in the coadd,
-it is essential to have a well-defined PSF.
+it is essential to have a well-defined PSF.  In these cases, the tradeoff between systematic and statistical uncertainties may point towards choices that are less statistically optimal (e.g., no use of inverse variance weights that include the object flux) but that reduce systematics.  Note, moreover, that this has implications for steps that may often be considered part of a process that precedes coaddition, such as cosmic ray rejection (see, for example, the discussion in section 3.3 of \citealt{2018PASJ...70S...5B}).
 
 We found that the following choices in the coadd algorithm lead to the coadd failing to
 have a well-defined PSF:
@@ -360,6 +363,10 @@ have a well-defined PSF:
 \end{itemize}
 
 Given these constraints, we are left only with linear coadd schemes using weights that are independent of the signal and the component PSFs.  If one needs the coadd PSF to be specifically correct at every location in the image, rather than merely unbiased, then one should use spatially invariant weights; however, this is typically not necessary. Note that we did not go into detail about matrix-based coadds, but these also qualify as linear, so these can be perfectly valid, so long as the matrix of weights follows the same restrictions of being independent of the signal and PSFs.
+
+\section*{Acknowledgments}
+
+We thank Chris Stubbs, Xiangchong Li, and Morgan Schmitz for useful feedback on a draft of this Note.
 
 \bibliographystyle{style_and_logos/apj}
 \bibliography{main}  

@@ -35,7 +35,7 @@ fig, ax = plt.subplots(1,1)
 
 ax.plot(x, I1, label='$I_1(x)$', color='blue', linewidth=0.4)
 ax.plot(x, I2, label='$I_2(x)$', color='orange', linewidth=0.4)
-ax.plot(x, I3, label='$I_2(x)$', color='green', linewidth=0.4)
+ax.plot(x, I3, label='$I_3(x)$', color='green', linewidth=0.4)
 ax.plot(x, Ic, label='$I_\mathrm{coadd}(x)$', color='magenta')
 ax.plot(x, IPc, label='$T \otimes P_\mathrm{coadd}(x)$', color='black')
 
