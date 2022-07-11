@@ -6,3 +6,6 @@ Figure 2 is produced using `psf_tests_median.py`, and the resulting figure is wr
 
 Figure 3 is produced using `extended.py`, and the resulting figure is written to `extended.pdf`.
 
+
+The calculations in Sec 3.2, leading up to Eq. 18 (TBC) were numerically confirmed with this notebook:
+https://colab.research.google.com/drive/1_mO1ly5Lj3B0gCzYPcQqnhP_frjooXvz?usp=sharing
