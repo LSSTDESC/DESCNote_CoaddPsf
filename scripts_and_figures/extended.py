@@ -1,5 +1,21 @@
+"""
+This script shows the effect of a non-linear coadd (specifically median) on
+the profile of an extended object.
+
+It makes Figure 3 of the final version of the paper.
+"""
+
 import matplotlib.pyplot as plt
 import numpy as np
+
+# color-blind friendly colors for line plots from https://gist.github.com/thriveth/8560036
+CB_color_cycle = ['#377eb8', '#ff7f00', '#4daf4a',
+                  '#f781bf', '#a65628', '#984ea3',
+                  '#999999', '#e41a1c', '#dede00']
+CB_color_names = ['blue', 'orange', 'green',
+                  'pink', 'brown', 'purple',
+                  'grey', 'red', 'yellow']
+colors = dict(zip(CB_color_names, CB_color_cycle))
 
 sigma1 = 0.5
 sigma2 = 1.5
@@ -33,11 +49,11 @@ print('coadd fluxes = ',Pc.sum()*dx, Ic.sum()*dx, IPc.sum()*dx)
 
 fig, ax = plt.subplots(1,1)
 
-ax.plot(x, I1, label='$I_1(x)$', color='blue', linewidth=0.4)
-ax.plot(x, I2, label='$I_2(x)$', color='orange', linewidth=0.4)
-ax.plot(x, I3, label='$I_3(x)$', color='green', linewidth=0.4)
-ax.plot(x, Ic, label='$I_\mathrm{coadd}(x)$', color='magenta')
-ax.plot(x, IPc, label='$T \otimes P_\mathrm{coadd}(x)$', color='black')
+ax.plot(x, I1, label='$I_1(x)$', color=colors['blue'], linewidth=0.8)
+ax.plot(x, I2, label='$I_2(x)$', color=colors['orange'], linewidth=0.8)
+ax.plot(x, I3, label='$I_3(x)$', color=colors['green'], linewidth=0.8)
+ax.plot(x, Ic, label='$I_\mathrm{coadd}(x)$', color='black', linewidth=2.0)
+ax.plot(x, IPc, label='$T \otimes P_\mathrm{coadd}(x)$', color=colors['pink'], linewidth=2.0)
 
 ax.legend(loc='upper right')
 ax.set_yscale('log')
@@ -47,3 +63,4 @@ ax.set_xlabel('$x$')
 ax.set_ylabel('$I(x)$/flux')
 
 fig.savefig('extended.pdf')
+fig.savefig('extended.png')
