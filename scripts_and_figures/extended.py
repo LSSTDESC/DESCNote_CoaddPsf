@@ -2,7 +2,7 @@
 This script shows the effect of a non-linear coadd (specifically median) on
 the profile of an extended object.
 
-It makes Figure 3 of the final version of the paper.
+It makes Figure 4 of the final version of the paper.
 """
 
 import matplotlib.pyplot as plt
