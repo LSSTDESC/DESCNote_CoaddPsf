@@ -99,7 +99,7 @@ for flux_val in star_flux_vals:
             ax.plot(x_values, mean_im/flux_val, label=r'$\langle I_{mean}\rangle(x)$',
                     color=star_color_vals[star_ind], linestyle='--', linewidth=1.5)
         ax.plot(x_values, tot_im/flux_val, label=r'$\langle I_{median}\rangle(x)$, flux=$10^{%d}$'%np.log10(flux_val),
-                color=star_color_vals[star_ind], linewidth=2.0)
+                color=star_color_vals[star_ind], alpha=0.5, linewidth=4.0)
     star_ind += 1
 ax.set(xlabel='x', ylabel=r'$I(x)$/flux')
 ax.set_yscale('log')
