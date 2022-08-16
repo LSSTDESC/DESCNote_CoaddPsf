@@ -11,7 +11,7 @@ import galsim
 from coadd_schemes import median_fitting, median_img
 
 
-def create_fit_dist(low_flux, high_flux, n_noise, sigma_dist, rng, bright=None):
+def create_fit_dist(low_flux, high_flux, n_noise, fwhm_dist, rng, bright=None):
     '''
     Creates galsim objects to simulate imaging, coadds the images, and finds
         the best fit based on a bright instance
@@ -20,7 +20,7 @@ def create_fit_dist(low_flux, high_flux, n_noise, sigma_dist, rng, bright=None):
     low_flux: float, faint star flux count
     high_flux: float, bright star flux count
     n_noise: float, the number of noisy realizations to use
-    sigma_dist: list of float PSF sizes
+    fwhm_dist: list of float PSF sizes
     rng: random number generator (galsim.BaseDeviate object)
     bright: a galsim.Image object, which is used to fit faint realizations, if
         not given, it will be made
@@ -38,8 +38,8 @@ def create_fit_dist(low_flux, high_flux, n_noise, sigma_dist, rng, bright=None):
     bf = 1.e2                                   # background flux counts, float
     #--------------------------------------------------------------------------
     # Getting terminal input and setting up the necessary variables
-    num_measurements = len(sigma_dist)
-    gaussian_sigmas = sigma_dist
+    num_measurements = len(fwhm_dist)
+    gaussian_fwhms = fwhm_dist
     flux1 = high_flux                           # bright star flux count, float
     flux2 = low_flux                            # faint star flux count, float
 
@@ -66,8 +66,8 @@ def create_fit_dist(low_flux, high_flux, n_noise, sigma_dist, rng, bright=None):
     for flux in fluxes_to_use:
         # Creating test galaxy objects
         objs = []
-        for sigma in gaussian_sigmas:
-            objs.append(galsim.Gaussian(sigma=sigma,
+        for fwhm in gaussian_fwhms:
+            objs.append(galsim.Gaussian(fwhm=fwhm,
                                         flux=flux).shear(g1=g1,g2=g2))
         # Creating test galaxy images
         imgs = []
@@ -86,20 +86,20 @@ def create_fit_dist(low_flux, high_flux, n_noise, sigma_dist, rng, bright=None):
             return fstar_arr, bright_img
     
 
-def visualize_bias(n_noise, rng, ax, sigma_dist, name, color_it):
+def visualize_bias(n_noise, rng, ax, fwhm_dist, name, color_it):
     '''
     Given an axis, this plots the bias from median coadd for the given
-        sigma_dist
+        fwhm_dist
 
     Inputs:
     n_noise: float, the number of noisy realizations to use
     rng: random number generator (galsim.BaseDeviate object)
     ax: matplotlib axis object
-    sigma_dist: list of float PSF sizes
-    name: string, what to put in legend for this sigma_dist
+    fwhm_dist: list of float PSF sizes
+    name: string, what to put in legend for this fwhm_dist
     color_it: int, to pick a new color
     '''
-    print("Starting simulation for {} distribution".format(sigma_dist))
+    print("Starting simulation for {} distribution".format(fwhm_dist))
     # Colorblind friendly palette
     CB_color_cycle = ['#377eb8', '#ff7f00', '#4daf4a',
                 '#f781bf', '#a65628', '#984ea3',
@@ -113,13 +113,13 @@ def visualize_bias(n_noise, rng, ax, sigma_dist, name, color_it):
     # Getting bright image (and first data point)
     data, bright_img = create_fit_dist(flux_arr[0],
                                        flux_arr[-1],
-                                       n_noise, sigma_dist, rng)
+                                       n_noise, fwhm_dist, rng)
     datapoints[0] = data 
     # Getting rest of the data, using the bright_img object as model for all
     for iter, val in enumerate(flux_arr[1:]):
         datapoints[iter+1] = create_fit_dist(val,
                                              flux_arr[-1],
-                                             n_noise, sigma_dist, rng,
+                                             n_noise, fwhm_dist, rng,
                                              bright=bright_img)[0]
     # Turning f_star distributions into plottable data
     f_vals = np.empty_like(flux_arr)
@@ -158,12 +158,12 @@ if __name__ == "__main__":
     # Getting Data
     n_noise = 1000
     for iter, mult in enumerate(multiplier):
-        input_sigmas = make_list(smallest_size,mult)
+        input_fwhms = make_list(smallest_size,mult)
         visualize_bias(n_noise, rng, ax,
-                       input_sigmas,
-                       r"$*${}: {}".format(mult,input_sigmas),
+                       input_fwhms,
+                       r"$*${}: {}".format(mult,input_fwhms),
                        iter)
-    ax.legend(title="PSF σ distribution",loc='upper right')
+    ax.legend(title="PSF FWHM distribution",loc='upper right')
     ax.set(title="Bias in PSF photometry for different PSF size distributions",
            xlabel=r"$f_{*}^{~true}/f_{*}^{~bright}$",
            ylabel=r"$f_{*}^{~estimated}/f_{*}^{~true}-1$")
@@ -176,5 +176,6 @@ if __name__ == "__main__":
     ax.set_xscale('log')
     ax.axhline(y=linthresh, color='lightgray', linestyle=':')
     ax.axhline(y=-linthresh, color='lightgray', linestyle=':')
+    plt.savefig('median_coadd_bias_dist.png')
+    plt.savefig('median_coadd_bias_dist.pdf')
     plt.show()
-    
