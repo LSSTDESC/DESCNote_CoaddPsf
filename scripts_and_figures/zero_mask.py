@@ -104,8 +104,10 @@ for n in range(num_centers):
     b1.append(bias[0])
     b2.append(bias[1])
 
-fig, ax = plt.subplots(1,2)
+# A diverging colormap that is supposedly colorblind-friendly.
 div_cmap=plt.get_cmap('RdYlBu')
+
+fig, ax = plt.subplots(1,2)
 h1 = ax[0].hexbin(x, y, b1, cmap=div_cmap, vmin=-5e-3, vmax=5e-3)
 h2 = ax[1].hexbin(x, y, b2, cmap=div_cmap, vmin=-5e-3, vmax=5e-3)
 
@@ -117,7 +119,6 @@ for a in ax:
 ax[0].set_title('E1 bias')
 ax[1].set_title('E2 bias')
 
-# A diverging colormap that is supposedly colorblind-friendly.
 fig.colorbar(h2, ax=ax, shrink=0.5)
 fig.savefig('mask_bias.pdf')
 fig.savefig('mask_bias.png')
