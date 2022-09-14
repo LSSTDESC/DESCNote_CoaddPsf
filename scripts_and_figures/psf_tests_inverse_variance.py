@@ -64,7 +64,7 @@ for flux_val in star_flux_vals:
             color=star_color_vals[star_ind], linewidth=2.0)
     print(np.median(tot_im*im_2.sum()/(tot_im.sum()*im_2)))
     star_ind += 1
-ax.set(xlabel='x', ylabel=r'$I(x)$')
+ax.set(xlabel='x', ylabel=r'$I(x)$/flux')
 ax.set_yscale('log')
 ax.set_ylim([1e-5,1])
 plt.legend(loc='upper right')
