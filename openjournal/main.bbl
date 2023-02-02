@@ -1,0 +1,155 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Anderson} \& {King}(2000)}]{2000PASP..112.1360A}
+{Anderson}, J., \& {King}, I.~R. 2000, \pasp, 112, 1360
+
+\bibitem[{{Annis} {et~al.}(2014){Annis}, {Soares-Santos}, {Strauss}, {Becker},
+  {Dodelson}, {Fan}, {Gunn}, {Hao}, {Ivezi{\'c}}, {Jester}, {Jiang},
+  {Johnston}, {Kubo}, {Lampeitl}, {Lin}, {Lupton}, {Miknaitis}, {Seo}, {Simet},
+  \& {Yanny}}]{2014ApJ...794..120A}
+{Annis}, J., {Soares-Santos}, M., {Strauss}, M.~A., {et~al.} 2014, \apj, 794,
+  120
+
+\bibitem[{Bosch(2016)}]{DMTN015}
+Bosch, J. 2016, \url{https://dmtn-015.lsst.io/}
+
+\bibitem[{{Bosch} {et~al.}(2018){Bosch}, {Armstrong}, {Bickerton}, {Furusawa},
+  {Ikeda}, {Koike}, {Lupton}, {Mineo}, {Price}, {Takata}, {Tanaka}, {Yasuda},
+  {AlSayyad}, {Becker}, {Coulton}, {Coupon}, {Garmilla}, {Huang}, {Krughoff},
+  {Lang}, {Leauthaud}, {Lim}, {Lust}, {MacArthur}, {Mandelbaum}, {Miyatake},
+  {Miyazaki}, {Murata}, {More}, {Okura}, {Owen}, {Swinbank}, {Strauss},
+  {Yamada}, \& {Yamanoi}}]{2018PASJ...70S...5B}
+{Bosch}, J., {Armstrong}, R., {Bickerton}, S., {et~al.} 2018, \pasj, 70, S5
+
+\bibitem[{{Ivezi{\'c}} {et~al.}(2019){Ivezi{\'c}}, {Kahn}, {Tyson}, {Abel},
+  {Acosta}, {Allsman}, {Alonso}, {AlSayyad}, {Anderson}, {Andrew}, {Angel},
+  {Angeli}, {Ansari}, {Antilogus}, {Araujo}, {Armstrong}, {Arndt}, {Astier},
+  {Aubourg}, {Auza}, {Axelrod}, {Bard}, {Barr}, {Barrau}, {Bartlett}, {Bauer},
+  {Bauman}, {Baumont}, {Bechtol}, {Bechtol}, {Becker}, {Becla}, {Beldica},
+  {Bellavia}, {Bianco}, {Biswas}, {Blanc}, {Blazek}, {Blandford}, {Bloom},
+  {Bogart}, {Bond}, {Booth}, {Borgland}, {Borne}, {Bosch}, {Boutigny},
+  {Brackett}, {Bradshaw}, {Brandt}, {Brown}, {Bullock}, {Burchat}, {Burke},
+  {Cagnoli}, {Calabrese}, {Callahan}, {Callen}, {Carlin}, {Carlson},
+  {Chandrasekharan}, {Charles-Emerson}, {Chesley}, {Cheu}, {Chiang}, {Chiang},
+  {Chirino}, {Chow}, {Ciardi}, {Claver}, {Cohen-Tanugi}, {Cockrum}, {Coles},
+  {Connolly}, {Cook}, {Cooray}, {Covey}, {Cribbs}, {Cui}, {Cutri}, {Daly},
+  {Daniel}, {Daruich}, {Daubard}, {Daues}, {Dawson}, {Delgado}, {Dellapenna},
+  {de Peyster}, {de Val-Borro}, {Digel}, {Doherty}, {Dubois},
+  {Dubois-Felsmann}, {Durech}, {Economou}, {Eifler}, {Eracleous}, {Emmons},
+  {Fausti Neto}, {Ferguson}, {Figueroa}, {Fisher-Levine}, {Focke}, {Foss},
+  {Frank}, {Freemon}, {Gangler}, {Gawiser}, {Geary}, {Gee}, {Geha}, {Gessner},
+  {Gibson}, {Gilmore}, {Glanzman}, {Glick}, {Goldina}, {Goldstein}, {Goodenow},
+  {Graham}, {Gressler}, {Gris}, {Guy}, {Guyonnet}, {Haller}, {Harris},
+  {Hascall}, {Haupt}, {Hernandez}, {Herrmann}, {Hileman}, {Hoblitt}, {Hodgson},
+  {Hogan}, {Howard}, {Huang}, {Huffer}, {Ingraham}, {Innes}, {Jacoby}, {Jain},
+  {Jammes}, {Jee}, {Jenness}, {Jernigan}, {Jevremovi{\'c}}, {Johns}, {Johnson},
+  {Johnson}, {Jones}, {Juramy-Gilles}, {Juri{\'c}}, {Kalirai}, {Kallivayalil},
+  {Kalmbach}, {Kantor}, {Karst}, {Kasliwal}, {Kelly}, {Kessler}, {Kinnison},
+  {Kirkby}, {Knox}, {Kotov}, {Krabbendam}, {Krughoff}, {Kub{\'a}nek},
+  {Kuczewski}, {Kulkarni}, {Ku}, {Kurita}, {Lage}, {Lambert}, {Lange},
+  {Langton}, {Le Guillou}, {Levine}, {Liang}, {Lim}, {Lintott}, {Long},
+  {Lopez}, {Lotz}, {Lupton}, {Lust}, {MacArthur}, {Mahabal}, {Mandelbaum},
+  {Markiewicz}, {Marsh}, {Marshall}, {Marshall}, {May}, {McKercher}, {McQueen},
+  {Meyers}, {Migliore}, {Miller}, {Mills}, {Miraval}, {Moeyens}, {Moolekamp},
+  {Monet}, {Moniez}, {Monkewitz}, {Montgomery}, {Morrison}, {Mueller},
+  {Muller}, {Mu{\~n}oz Arancibia}, {Neill}, {Newbry}, {Nief}, {Nomerotski},
+  {Nordby}, {O'Connor}, {Oliver}, {Olivier}, {Olsen}, {O'Mullane}, {Ortiz},
+  {Osier}, {Owen}, {Pain}, {Palecek}, {Parejko}, {Parsons}, {Pease},
+  {Peterson}, {Peterson}, {Petravick}, {Libby Petrick}, {Petry},
+  {Pierfederici}, {Pietrowicz}, {Pike}, {Pinto}, {Plante}, {Plate}, {Plutchak},
+  {Price}, {Prouza}, {Radeka}, {Rajagopal}, {Rasmussen}, {Regnault}, {Reil},
+  {Reiss}, {Reuter}, {Ridgway}, {Riot}, {Ritz}, {Robinson}, {Roby}, {Roodman},
+  {Rosing}, {Roucelle}, {Rumore}, {Russo}, {Saha}, {Sassolas}, {Schalk},
+  {Schellart}, {Schindler}, {Schmidt}, {Schneider}, {Schneider}, {Schoening},
+  {Schumacher}, {Schwamb}, {Sebag}, {Selvy}, {Sembroski}, {Seppala}, {Serio},
+  {Serrano}, {Shaw}, {Shipsey}, {Sick}, {Silvestri}, {Slater}, {Smith},
+  {Smith}, {Sobhani}, {Soldahl}, {Storrie-Lombardi}, {Stover}, {Strauss},
+  {Street}, {Stubbs}, {Sullivan}, {Sweeney}, {Swinbank}, {Szalay}, {Takacs},
+  {Tether}, {Thaler}, {Thayer}, {Thomas}, {Thornton}, {Thukral}, {Tice},
+  {Trilling}, {Turri}, {Van Berg}, {Vanden Berk}, {Vetter}, {Virieux},
+  {Vucina}, {Wahl}, {Walkowicz}, {Walsh}, {Walter}, {Wang}, {Wang}, {Warner},
+  {Wiecha}, {Willman}, {Winters}, {Wittman}, {Wolff}, {Wood-Vasey}, {Wu},
+  {Xin}, {Yoachim}, \& {Zhan}}]{2019ApJ...873..111I}
+{Ivezi{\'c}}, {\v{Z}}., {Kahn}, S.~M., {Tyson}, J.~A., {et~al.} 2019, \apj,
+  873, 111
+
+\bibitem[{Kaiser(2001)}]{Kaiser}
+Kaiser, N. 2001,
+  \url{http://pan-starrs.ifa.hawaii.edu/project/people/kaiser/imageprocessing/im++.pdf}
+
+\bibitem[{Lauer(1999)}]{Lauer99}
+Lauer, T.~R. 1999, Publications of the Astronomical Society of the Pacific,
+  111, 227 – 237, cited by: 82
+
+\bibitem[{{Li} {et~al.}(2021){Li}, {Silverman}, {Ding}, {Strauss}, {Goulding},
+  {Birrer}, {Yesuf}, {Xue}, {Kawinwanichakij}, {Matsuoka}, {Toba}, {Nagao},
+  {Schramm}, \& {Inayoshi}}]{2021ApJ...918...22L}
+{Li}, J., {Silverman}, J.~D., {Ding}, X., {et~al.} 2021, \apj, 918, 22
+
+\bibitem[{{LSST Science Collaboration} {et~al.}(2009){LSST Science
+  Collaboration}, {Abell}, {Allison}, {Anderson}, {Andrew}, {Angel}, {Armus},
+  {Arnett}, {Asztalos}, {Axelrod}, {Bailey}, {Ballantyne}, {Bankert},
+  {Barkhouse}, {Barr}, {Barrientos}, {Barth}, {Bartlett}, {Becker}, {Becla},
+  {Beers}, {Bernstein}, {Biswas}, {Blanton}, {Bloom}, {Bochanski}, {Boeshaar},
+  {Borne}, {Bradac}, {Brandt}, {Bridge}, {Brown}, {Brunner}, {Bullock},
+  {Burgasser}, {Burge}, {Burke}, {Cargile}, {Chandrasekharan}, {Chartas},
+  {Chesley}, {Chu}, {Cinabro}, {Claire}, {Claver}, {Clowe}, {Connolly}, {Cook},
+  {Cooke}, {Cooray}, {Covey}, {Culliton}, {de Jong}, {de Vries}, {Debattista},
+  {Delgado}, {Dell'Antonio}, {Dhital}, {Di Stefano}, {Dickinson}, {Dilday},
+  {Djorgovski}, {Dobler}, {Donalek}, {Dubois-Felsmann}, {Durech},
+  {Eliasdottir}, {Eracleous}, {Eyer}, {Falco}, {Fan}, {Fassnacht}, {Ferguson},
+  {Fernandez}, {Fields}, {Finkbeiner}, {Figueroa}, {Fox}, {Francke}, {Frank},
+  {Frieman}, {Fromenteau}, {Furqan}, {Galaz}, {Gal-Yam}, {Garnavich},
+  {Gawiser}, {Geary}, {Gee}, {Gibson}, {Gilmore}, {Grace}, {Green}, {Gressler},
+  {Grillmair}, {Habib}, {Haggerty}, {Hamuy}, {Harris}, {Hawley}, {Heavens},
+  {Hebb}, {Henry}, {Hileman}, {Hilton}, {Hoadley}, {Holberg}, {Holman},
+  {Howell}, {Infante}, {Ivezic}, {Jacoby}, {Jain}, {R}, {Jedicke}, {Jee},
+  {Garrett Jernigan}, {Jha}, {Johnston}, {Jones}, {Juric}, {Kaasalainen},
+  {Styliani}, {Kafka}, {Kahn}, {Kaib}, {Kalirai}, {Kantor}, {Kasliwal},
+  {Keeton}, {Kessler}, {Knezevic}, {Kowalski}, {Krabbendam}, {Krughoff},
+  {Kulkarni}, {Kuhlman}, {Lacy}, {Lepine}, {Liang}, {Lien}, {Lira}, {Long},
+  {Lorenz}, {Lotz}, {Lupton}, {Lutz}, {Macri}, {Mahabal}, {Mandelbaum},
+  {Marshall}, {May}, {McGehee}, {Meadows}, {Meert}, {Milani}, {Miller},
+  {Miller}, {Mills}, {Minniti}, {Monet}, {Mukadam}, {Nakar}, {Neill}, {Newman},
+  {Nikolaev}, {Nordby}, {O'Connor}, {Oguri}, {Oliver}, {Olivier}, {Olsen},
+  {Olsen}, {Olszewski}, {Oluseyi}, {Padilla}, {Parker}, {Pepper}, {Peterson},
+  {Petry}, {Pinto}, {Pizagno}, {Popescu}, {Prsa}, {Radcka}, {Raddick},
+  {Rasmussen}, {Rau}, {Rho}, {Rhoads}, {Richards}, {Ridgway}, {Robertson},
+  {Roskar}, {Saha}, {Sarajedini}, {Scannapieco}, {Schalk}, {Schindler},
+  {Schmidt}, {Schmidt}, {Schneider}, {Schumacher}, {Scranton}, {Sebag},
+  {Seppala}, {Shemmer}, {Simon}, {Sivertz}, {Smith}, {Allyn Smith}, {Smith},
+  {Spitz}, {Stanford}, {Stassun}, {Strader}, {Strauss}, {Stubbs}, {Sweeney},
+  {Szalay}, {Szkody}, {Takada}, {Thorman}, {Trilling}, {Trimble}, {Tyson}, {Van
+  Berg}, {Vanden Berk}, {VanderPlas}, {Verde}, {Vrsnak}, {Walkowicz},
+  {Wandelt}, {Wang}, {Wang}, {Warner}, {Wechsler}, {West}, {Wiecha},
+  {Williams}, {Willman}, {Wittman}, {Wolff}, {Wood-Vasey}, {Wozniak}, {Young},
+  {Zentner}, \& {Zhan}}]{2009arXiv0912.0201L}
+{LSST Science Collaboration}, {Abell}, P.~A., {Allison}, J., {et~al.} 2009,
+  arXiv e-prints, arXiv:0912.0201
+
+\bibitem[{{Mandelbaum}(2018)}]{2018ARA&A..56..393M}
+{Mandelbaum}, R. 2018, \araa, 56, 393
+
+\bibitem[{{Paulin-Henriksson} {et~al.}(2008){Paulin-Henriksson}, {Amara},
+  {Voigt}, {Refregier}, \& {Bridle}}]{2008A&A...484...67P}
+{Paulin-Henriksson}, S., {Amara}, A., {Voigt}, L., {Refregier}, A., \&
+  {Bridle}, S.~L. 2008, \aap, 484, 67
+
+\bibitem[{{Rowe} {et~al.}(2011){Rowe}, {Hirata}, \&
+  {Rhodes}}]{2011ApJ...741...46R}
+{Rowe}, B., {Hirata}, C., \& {Rhodes}, J. 2011, \apj, 741, 46
+
+\bibitem[{{Rowe} {et~al.}(2015){Rowe}, {Jarvis}, {Mandelbaum}, {Bernstein},
+  {Bosch}, {Simet}, {Meyers}, {Kacprzak}, {Nakajima}, {Zuntz}, {Miyatake},
+  {Dietrich}, {Armstrong}, {Melchior}, \& {Gill}}]{Rowe15}
+{Rowe}, B.~T.~P., {Jarvis}, M., {Mandelbaum}, R., {et~al.} 2015, Astronomy and
+  Computing, 10, 121
+
+\bibitem[{{Zackay} \& {Ofek}(2017{\natexlab{a}})}]{2017ApJ...836..187Z}
+{Zackay}, B., \& {Ofek}, E.~O. 2017{\natexlab{a}}, \apj, 836, 187
+
+\bibitem[{{Zackay} \& {Ofek}(2017{\natexlab{b}})}]{2017ApJ...836..188Z}
+---. 2017{\natexlab{b}}, \apj, 836, 188
+
+\end{thebibliography}

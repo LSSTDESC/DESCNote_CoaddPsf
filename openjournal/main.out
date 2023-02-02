@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section*.1}{Abstract}{section*.2}% 1
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.2}{Formalism}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{The Coadd PSF}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Sampling}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Linear coaddition schemes}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Direct illustration}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Formal demonstration}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Nonlinear coaddition schemes}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Median coadds}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Clipped-mean coadd}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.3}{Extended Sources}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 13
