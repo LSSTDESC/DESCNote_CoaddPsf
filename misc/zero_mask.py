@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 im_size = 128
 pixel_scale = 0.2
-num_centers = 10000
+num_centers = 100_000
 
 psfs = [
     galsim.Gaussian(fwhm=0.6).shear(g1=0.02, g2=0.03),
@@ -92,8 +92,12 @@ for n in range(num_centers):
     center = galsim.PositionD(*rng.uniform(-30,30,size=2))
     print(f'{n}/{num_centers}: {center}')
 
+    # Use a random shuffling of the weight images for each image.
+    wt_index = rng.choice(3, size=3, replace=False)
+    shuffled_weights = [weights[i] for i in wt_index]
+
     try:
-        bias = compute_bias(center, gal, psfs, images, weights)
+        bias = compute_bias(center, gal, psfs, images, shuffled_weights)
     except RuntimeError:
         # Should be rare, but it happens.
         # When it does, just skip this iteration.
